@@ -58,12 +58,12 @@ test('Validation date', () => {
 
 describe('Validation illegal arguments', () => {
     test("Ilegal horario de entrada", () => {
-        const result = () => createEvent(weekday,week,15,14);
+        const result = () => createEvent(weekday,week,10,7);
         expect(result).toThrow(Error);        
     });
 
     test("Ilegal semana con valor positivo", () => {
-        const result = () => createEvent(weekday,-5,openHour,closeHour);
+        const result = () => createEvent(weekday,-2,openHour,closeHour);
         expect(result).toThrow(Error);        
     });
 
