@@ -3,7 +3,7 @@ import { createEvent } from './functions'
 const RealDate = Date.now
 
 beforeAll(() => {
-    global.Date.now = jest.fn(() => new Date('2019-04-07T10:20:30Z').getTime())
+    global.Date.now = jest.fn(() => new Date('2021-12-07T20:00:00Z').getTime())
 })
 test('Validation a event title and content basic', () => {
     const weekday = "mon";
