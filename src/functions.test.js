@@ -1,7 +1,21 @@
 import { createEvent } from './functions'
 
+const RealDate = Date.now
+
+beforeAll(() => {
+    global.Date.now = jest.fn(() => new Date('2019-04-07T10:20:30Z').getTime())
+})
 test('Validation a event title and content basic', () => {
-    //TODO: hacer las verificaciones
+    const weekday = "mon";
+    const week = 1;
+    const openHour = 8;
+    const closeHour = 14;
+
+    const result = createEvent(weekday, week, openHour, closeHour);
+
+    expect(result.title).toBe("[SOFKA U] Meeting Room");
+    expect(result.description).toBe("Mentoring and Practice");
+    expect(result.duration).toEqual([6, 'hour']);
 });
 
 test('Validation start date', () => {
